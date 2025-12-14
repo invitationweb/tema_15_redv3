@@ -1,99 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website sederhana</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Jawa – Premium</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #050505;
+    }
+    .font-jawa {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.05em;
+    }
+
+    /* === VARIAN WARNA === */
+    :root {
+      --gold-main: #ffd87d;
+      --gold-dark: #cfa336;
+      --bg-main: #050505;
+      --text-main: #f5e6b8;
+    }
+
+    body.theme-gold {
+      --gold-main: #ffd87d;
+      --gold-dark: #cfa336;
+      --bg-main: #050505;
+      --text-main: #f5e6b8;
+    }
+
+    body.theme-ivory {
+      --gold-main: #d4af37;
+      --gold-dark: #bfa76a;
+      --bg-main: #f6f2e9;
+      --text-main: #3b2f1f;
+    }
+
+    body.theme-coklat {
+      --gold-main: #e6c28b;
+      --gold-dark: #8b5a2b;
+      --bg-main: #1b120a;
+      --text-main: #f3e6d3;
+    }
+
+    body {
+      background: var(--bg-main);
+      color: var(--text-main);
+    }
+
+    .gold {
+      color: var(--gold-main);
+      text-shadow: 0 0 12px rgba(255,216,125,0.45);
+    }
+    .bg-gold {
+      background: linear-gradient(135deg, var(--gold-main), var(--gold-dark));
+      color: #1b1b1b;
+      font-weight: 600;
+    }
+
+    .bg-batik {
+      background-image:
+        radial-gradient(circle at center, rgba(255,215,120,0.15), rgba(0,0,0,0.6)),
+        url('assets/batik-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(10,10,10,0.95));
+      border: 2px solid var(--gold-main);
+      border-radius: 2rem;
+      padding: 3rem;
+      box-shadow: 0 0 40px rgba(243,217,139,0.25);
+    }
+  </style>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href=""></a>Beranda</li>
-            <li><a href="news 1">konten 1</a></li>
-            <li><a href="news 2">konten 2</a></li>
-            <li><a href="news 3">konten 3</a></li>
-            <li><a href="news 4">konten 4</a></li>
+<body class="theme-gold text-[#f5e6b8]">
 
-        </ul>
-    </nav>
-    <div>
-        <img src="gambar/hostingercover..jpg" class="cover.image">
+<!-- AUDIO -->
+<!-- AUDIO (AMAN AUTOPLAY SETELAH KLIK) -->
+<audio id="musik" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- LANDING PAGE -->
+<!-- LANDING PAGE FINAL (NO GARIS / NO BUG) -->
+<section id="landing" class="min-h-screen flex items-center justify-center bg-batik relative overflow-hidden">
+
+  <!-- ORNAMEN ATAS -->
+  
+
+  <!-- OVERLAY GELAP -->
+  <div class="absolute inset-0 bg-black/40" style="z-index:1"></div>
+
+  <!-- KONTEN -->
+  <div class="relative z-10 max-w-md text-center">
+    <div class="card">
+      <p class="tracking-widest text-sm gold">UNDANGAN PERNIKAHAN</p>
+      <h1 class="font-jawa text-5xl mt-6 gold">Putra & Putri</h1>
+      <p class="mt-6">Dengan memohon rahmat dan ridho Allah SWT</p>
+      <button onclick="bukaUndangan()" class="mt-8 px-8 py-3 bg-gold rounded-full">
+        Buka Undangan
+      </button>
     </div>
+  </div>
 
-    <main>
-        <div> 
-            <article>
-                <h2>news1</h2>
-                <img src="gambar/hostinger1..jpeg" class="featured-image" alt="konten 1">
-                <p>
+  <!-- ORNAMEN BAWAH -->
+  
 
-Baca artikel CNN Indonesia "Jadwal Timnas Indonesia U-23 di SEA Games 2025" selengkapnya di sini: 
-<br>
-<br>
-https://www.cnnindonesia.com/olahraga/20251121115140-142-1297855/jadwal-timnas-indonesia-u-23-di-sea-games-2025.
-<br>
-<br>
-Download Apps CNN Indonesia sekarang https://app.cnnindonesia.com/</p>
-            </article>
-            /ul>
-    
-    <main>
-        <div> 
-            <article>
-                <h2>news 2</h2>
-                <img src="gambar/hostinger2..jpeg" class="featured-image" alt="konten 1">
-                <p>
+</section>
 
-Baca artikel CNN Indonesia "Jadwal Timnas Indonesia U-23 di SEA Games 2025" selengkapnya di sini: 
-<br>
-<br>
-https://www.cnnindonesia.com/olahraga/20251121115140-142-1297855/jadwal-timnas-indonesia-u-23-di-sea-games-2025.
-<br>
-<br>
-Download Apps CNN Indonesia sekarang https://app.cnnindonesia.com/</p>
-            </article>
+<!-- ISI UNDANGAN -->
+<section id="undangan" class="hidden">
 
-        </div>
-    </main>
-     <main>
-        <div> 
-            <article>
-                <h2>news 3</h2>
-                <img src="gambar/hostinger3..png" class="featured-image" alt="konten 1">
-                <p>
 
-Baca artikel CNN Indonesia "Jadwal Timnas Indonesia U-23 di SEA Games 2025" selengkapnya di sini: 
-<br>
-<br>
-https://www.cnnindonesia.com/olahraga/20251121115140-142-1297855/jadwal-timnas-indonesia-u-23-di-sea-games-2025.
-<br>
-<br>
-Download Apps CNN Indonesia sekarang https://app.cnnindonesia.com/</p>
-            </article>
 
-        </div>
-    </main>
-     <main>
-        <div> 
-            <article>
-                <h2>news 4</h2>
-                <img src="gambar/hostinger4..jpeg" class="featured-image" alt="konten 1">
-                <p>
+<!-- HERO -->
+<section class="min-h-screen flex items-center justify-center bg-black">
+  <div class="text-center">
+    <h2 class="font-jawa text-5xl gold">Putra & Putri</h2>
+    <p class="mt-4 italic">"Sakinah Mawaddah Warahmah"</p>
+  </div>
+</section>
 
-Baca artikel CNN Indonesia "Jadwal Timnas Indonesia U-23 di SEA Games 2025" selengkapnya di sini: 
-<br>
-<br>
-https://www.cnnindonesia.com/olahraga/20251121115140-142-1297855/jadwal-timnas-indonesia-u-23-di-sea-games-2025.
-<br>
-<br>
-Download Apps CNN Indonesia sekarang https://app.cnnindonesia.com/</p>
-            </article>
 
-        </div>
-    </main>
-    <footer>
-        <p>made in halmi sofyan</p>
-    </footer>
+
+<!-- AYAT -->
+<section class="py-20 bg-[#0b0b0b]">
+  <div class="max-w-3xl mx-auto text-center card">
+    <p class="text-3xl gold mb-4">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا</p>
+    <p class="italic mb-4">"Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan pasangan..."</p>
+    <p class="text-sm gold">QS. Ar-Rum : 21</p>
+  </div>
+</section
+
+<!-- COUNTDOWN -->
+<section class="py-16 bg-black text-center">
+  <h3 class="font-jawa text-3xl gold mb-4">Menuju Hari Bahagia</h3>
+  <div id="countdown" class="text-xl gold"></div>
+</section>
+
+<!-- MEMPELAI -->
+<section class="py-20 bg-[#111]">
+  <h3 class="text-center font-jawa text-3xl mb-10 gold">Mempelai</h3>
+  <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="text-center">
+      <img src="foto1.jpg" class="rounded-2xl mx-auto mb-4" />
+      <h4 class="font-jawa text-xl">Putra</h4>
+      <p>Putra Bapak Lorem & Ibu Ipsum</p>
+    </div>
+    <div class="text-center">
+      <img src="foto1.jpg" class="rounded-2xl mx-auto mb-4" />
+      <h4 class="font-jawa text-xl">Putri</h4>
+      <p>Putri Bapak Lorem & Ibu Ipsum</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACARA -->
+<section class="py-20 bg-[#0d0d0d] text-center">
+  <h3 class="font-jawa text-3xl gold mb-6">Acara Pernikahan</h3>
+  <p>Minggu, 20 April 2025</p>
+  <p>Gedung Serbaguna – Yogyakarta</p>
+</section>
+
+<!-- MAP -->
+<section class="py-16 bg-black text-center">
+  <iframe src="https://www.google.com/maps?q=Yogyakarta&output=embed"
+    class="w-full max-w-3xl mx-auto h-64 rounded-xl border border-yellow-500"></iframe>
+</section>
+
+<!-- GALERI -->
+<section class="py-16 bg-neutral-900">
+  <h3 class="text-center font-jawa text-3xl mb-10 gold">Galeri</h3>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto px-4">
+    <img src="foto1.jpg" class="rounded-xl" />
+    <img src="foto2.jpg" class="rounded-xl" />
+    <img src="foto3.jpg" class="rounded-xl" />
+    <img src="foto2.jpg" class="rounded-xl" />
+    <img src="foto3.jpg" class="rounded-xl" />
+    <img src="foto2.jpg" class="rounded-xl" />
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="py-20 bg-black text-center">
+  <h3 class="font-jawa text-3xl gold mb-6">Konfirmasi Kehadiran</h3>
+  <a href="https://wa.me/6281234567890" target="_blank" class="px-8 py-3 bg-gold rounded-full">RSVP via WhatsApp</a>
+</section>
+
+<!-- AMPLOP DIGITAL -->
+<section class="py-20 bg-black text-center">
+  <h3 class="font-jawa text-3xl gold mb-4">Amplop Digital</h3>
+  <p>BCA 123456789</p>
+  <p>a.n Putra</p>
+  <p class="mt-2 text-sm">DANA • OVO • QRIS</p>
+</section>
+
+<!-- UCAPAN -->
+<section class="py-16 bg-neutral-800">
+  <h3 class="text-center font-jawa text-3xl mb-8">Ucapan & Doa</h3>
+  <div class="max-w-xl mx-auto">
+    <textarea placeholder="Tulis ucapan..." class="w-full p-3 rounded-lg text-black"></textarea>
+    <button class="mt-4 w-full bg-gold py-2 rounded-lg">Kirim</button>
+  </div>
+</section>
+
+<footer class="py-10 text-center bg-black text-sm gold">© 2025 Undangan Digital Jawa – Siap Dijual</footer>
+
+</section>
+
+<script>
+function bukaUndangan() {
+  const landing = document.getElementById('landing');
+  const undangan = document.getElementById('undangan');
+  const musik = document.getElementById('musik');
+
+  if (landing && undangan) {
+    landing.classList.add('hidden');
+    undangan.classList.remove('hidden');
+  }
+
+  if (musik) {
+    musik.volume = 0.6;
+    musik.play().catch(() => {});
+  }
+}
+
+// COUNTDOWN AMAN (TUNGGU DOM)
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('countdown');
+  if (!el) return;
+
+  const targetDate = new Date('2025-04-20T08:00:00').getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const d = targetDate - now;
+    if (d < 0) {
+      el.innerHTML = 'Hari Bahagia Telah Tiba';
+      return;
+    }
+    const days = Math.floor(d / (1000*60*60*24));
+    const hours = Math.floor((d % (1000*60*60*24))/(1000*60*60));
+    const mins = Math.floor((d % (1000*60*60))/(1000*60));
+    el.innerHTML = days + ' Hari ' + hours + ' Jam ' + mins + ' Menit';
+  }, 1000);
+});
+</script>
+
 </body>
 </html>
